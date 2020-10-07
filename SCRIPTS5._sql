@@ -1,0 +1,27 @@
+-- Created on 8/28/2019 by A702840 
+declare 
+  --todas as variaveis sao declarada aqui ---
+
+  V_NM_FUNCIONARIO   employees.first_name%Type;
+  i integer;
+begin
+ -- logica de programacao--
+
+SELECT first_name
+INTO V_NM_FUNCIONARIO
+FROM employees
+WHERE employees_id = 102;
+
+-- se aplica a logica de prog--
+IF V_NM_FUNCIONARIO <> `LEX` THEN
+   DMS_OUTPUT.put_line(V_NM_FUNCIONARIO);
+ELSE
+DMS_OUTPUT.put_line(NOK);
+END IF; -- FIM DO IF
+
+-- package oracle DMS_OUTPUT
+-- EXCEPTION 
+-- PROCESSAMENTO DE EXCEPCOES  
+-- maior>, menor<, igual=, diferente<>, diferente forma diferente!=, igual ou menor=<, igual ou maior=>
+  
+end; -- FIM DO BLOCO
